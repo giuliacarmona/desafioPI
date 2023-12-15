@@ -1,5 +1,4 @@
 CREATE DATABASE aquatech;
-
 USE aquatech;
 
 CREATE TABLE empresa (

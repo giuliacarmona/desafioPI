@@ -81,7 +81,7 @@ body {
 }
 
 .social {
-  background-color: #e5e5e5;
+  background-color: #000000;
   display: flex;
 }
 
@@ -100,6 +100,7 @@ body {
 }
 
 .box {
+  color: #fff;
   width: 280px;
   height: 450px;
   display: flex;
@@ -237,8 +238,8 @@ body {
 .footer {
   height: var(--tamanho-footer);
   width: 100%;
-  background-color: #32b9cd;
-  color: #fff;
+  background-color: #e3b062;
+  color: #000000;
 }
 
 .footer h4 {

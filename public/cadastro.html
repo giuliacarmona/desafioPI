@@ -18,7 +18,7 @@
     rel="stylesheet" />
 </head>
 
-<body onload="listar()">
+<body onload="listar(), listar2()">
   <!--header inicio-->
   <div class="header">
     <div class="container">
@@ -62,6 +62,14 @@
               <option selected>Selecione uma empresa</option>
             </select>
           </div>
+         
+          <div class="campo">
+            <span>Câmera:</span>
+            <select name="camera" id="listaCamera">
+              <option selected>Selecione uma camera</option>
+            </select>
+          </div>
+         
           <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
@@ -108,6 +116,7 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
+    var cameraVar = listaCamera.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
@@ -139,6 +148,7 @@
       body: JSON.stringify({
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
+        cameraServer: cameraVar,
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
@@ -190,5 +200,21 @@
 
   function sumirMensagem() {
     cardErro.style.display = "none";
+  }
+
+function listar2() {
+    fetch("/cameras/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((cameras) => {
+          cameras.forEach((camera) => {
+            listaCamera.innerHTML += `<option value='${camera.id}'>${camera.nome}</option>`;
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
   }
 </script>

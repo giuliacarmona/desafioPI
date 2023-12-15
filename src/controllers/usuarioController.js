@@ -57,6 +57,7 @@ function cadastrar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
     var empresaId = req.body.empresaServer;
+    var camera = req.body.cameraServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -67,10 +68,12 @@ function cadastrar(req, res) {
         res.status(400).send("Sua senha está undefined!");
     } else if (empresaId == undefined) {
         res.status(400).send("Sua empresa está undefined!");
+    } else if (camera == undefined) {
+        res.status(400).send("Sua camera está undefined!");
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, empresaId)
+        usuarioModel.cadastrar(nome, email, senha, empresaId, camera)
             .then(
                 function (resultado) {
                     res.json(resultado);

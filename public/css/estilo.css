@@ -21,7 +21,7 @@ body {
 
 .header {
   height: var(--tamanho-header);
-  border-bottom: 2px solid #32b9cd;
+  border-bottom: 2px solid #e3b062;
 }
 
 .header .container {
@@ -49,7 +49,7 @@ body {
 }
 
 .titulo {
-  color: #32b9cd;
+  color: #e3b062;
   width: fit-content;
   font-weight: 500;
 }
@@ -60,7 +60,7 @@ body {
 
 .banner {
   height: var(--tamanho-banner);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url('../assets/imgs/osarugue-igbinoba-FpWaEa2_d5w-unsplash.jpg');
   background-size: cover;
 }
 

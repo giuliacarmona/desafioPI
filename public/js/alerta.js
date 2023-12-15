@@ -21,7 +21,7 @@ function obterdados(idAquario) {
 }
 
 function alertar(resposta, idAquario) {
-    var temp = resposta[0].temperatura;
+    var temp = resposta[0].luminosidade;
 
     var grauDeAviso = '';
 
@@ -67,7 +67,7 @@ function alertar(resposta, idAquario) {
     var card;
 
     if (document.getElementById(`temp_aquario_${idAquario}`) != null) {
-        document.getElementById(`temp_aquario_${idAquario}`).innerHTML = temp + "°C";
+        document.getElementById(`temp_aquario_${idAquario}`).innerHTML = temp + " Lumens";
     }
 
     if (document.getElementById(`card_${idAquario}`)) {

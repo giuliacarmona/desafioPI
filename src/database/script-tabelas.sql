@@ -1,18 +1,10 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
-
-/*
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-comandos para mysql - banco local - ambiente de desenvolvimento
-*/
-
 CREATE DATABASE aquatech;
 
 USE aquatech;
 
 CREATE TABLE empresa (
+	id INT PRIMARY KEY auto_increment,
+    razao_social varchar(50),
 	cnpj CHAR(14)
 );
 
